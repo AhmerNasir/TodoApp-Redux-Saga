@@ -1,3 +1,4 @@
+import { stringify } from 'querystring';
 import { call, put, takeEvery, all, fork } from 'redux-saga/effects';
 
 import { add, remove, toggle, reset } from '../app/actions';
@@ -7,11 +8,12 @@ import { REQUEST_TO_ADD, REQUEST_TO_REMOVE, REQUEST_TO_TOGGLE, REQUEST_TO_RESET 
 import { RequestToAdd, RequestToRemove, RequestToToggle, RequestToReset } from './types';
 
 function* requestAddTodo(data: RequestToAdd) {
+
     try {
         yield call(apiCall)
         yield put(add(data.todo))
     } catch(e) {
-        console.error(e.message)
+        console.error('error module')
     }
 }
 
@@ -20,7 +22,7 @@ function* requestRemoveTodo(data: RequestToRemove) {
         yield call(apiCall)
         yield put(remove(data.id))
     } catch(e) {
-        console.error(e.message)
+        console.error('error module')
     }
 }
 
@@ -29,7 +31,7 @@ function* requestToggleTodo(data: RequestToToggle) {
         yield call(apiCall)
         yield put(toggle(data.id))
     } catch(e) {
-        console.error(e.message)
+        console.error('error module')
     }
 }
 
@@ -38,7 +40,7 @@ function* requestReset(data: RequestToReset) {
         yield call(apiCall)
         yield put(reset())
     } catch(e) {
-        console.error(e.message)
+        console.error('error module')
     }
 }
 
