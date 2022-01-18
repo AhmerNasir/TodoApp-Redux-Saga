@@ -13,7 +13,7 @@ const Main = () => (
         <Container maxWidth="sm" style={{textAlign:'center',marginTop:'50px'}}>
             <Typography variant="h5">
             <figure>
-                <Image src="/todo.svg" width={300} height={100} />
+                <Image src="/todo.svg" width={300} height={100}  alt='Header Image'/>
                 <figcaption style={{marginTop:'20px'}}>Add your List Here</figcaption>
             </figure>
                 Todos With Redux-Saga
